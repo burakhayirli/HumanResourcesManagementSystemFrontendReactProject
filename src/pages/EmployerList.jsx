@@ -11,6 +11,7 @@ export default function EmployerList() {
         employerService.getEmployers().then(result => setEmployers(result.data.data))
     }, [])
 
+    
     return (
         <div>
            İş Veren Listesi {employers.length}
