@@ -9,6 +9,5 @@ export default function SignedOut({signIn}) {
                 <Button primary style={{marginLeft:"0.5em"}}>Kayıt Ol</Button>
             </Menu.Item>            
         </div>
-        
     )
 }
