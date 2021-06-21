@@ -22,6 +22,7 @@ export default function Dashboard() {
                     </Grid.Column>
                 </Grid.Row>
             </Grid>
+            
         </div>
     )
 }
