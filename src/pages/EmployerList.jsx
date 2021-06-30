@@ -11,10 +11,10 @@ export default function EmployerList() {
         employerService.getEmployers().then(result => setEmployers(result.data.data))
     }, [])
 
-    
+
     return (
         <div>
-           İş Veren Listesi {employers.length}
+           <Label>İş Veren Listesi {employers.length}</Label>
            <Table celled>
                 <Table.Header>
                     <Table.Row>
@@ -34,7 +34,7 @@ export default function EmployerList() {
                             <Table.Cell>{employer.email}</Table.Cell>
                             <Table.Cell>{employer.website}</Table.Cell>
                             <Table.Cell>{employer.phone}</Table.Cell>
-                            <Table.Cell>{employer.status == 1 ? "Aktif": "Pasif"}</Table.Cell>
+                            <Table.Cell>{employer.status === true ? "Aktif": "Pasif"}</Table.Cell>
                         </Table.Row>
                         ))
                     }

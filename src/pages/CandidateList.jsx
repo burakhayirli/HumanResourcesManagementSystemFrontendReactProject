@@ -1,5 +1,5 @@
 import React, {useState,useEffect} from 'react'
-import { Icon, Label, Menu, Table } from 'semantic-ui-react'
+import { Icon,  Menu, Table } from 'semantic-ui-react'
 import CandidateService from '../services/candidateService'
 
 export default function CandidateList() {
@@ -13,7 +13,7 @@ useEffect(() => {
 
     return (
         <div>
-            Aday Listesi {candidates.length}
+            Aday Listesi - {candidates.length} adet aday bulundu.
            <Table celled>
                 <Table.Header>
                     <Table.Row>

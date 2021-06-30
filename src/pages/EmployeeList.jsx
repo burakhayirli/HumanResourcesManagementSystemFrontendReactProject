@@ -1,5 +1,5 @@
 import React, {useState,useEffect} from 'react'
-import { Icon, Label, Menu, Table } from 'semantic-ui-react'
+import { Icon,  Menu, Table } from 'semantic-ui-react'
 import EmployeeService from '../services/employeeService';
 
 export default function EmployeeList() {
@@ -33,7 +33,7 @@ export default function EmployeeList() {
                             <Table.Cell>{employee.lastName}</Table.Cell>
                             <Table.Cell>{employee.email}</Table.Cell>
                             <Table.Cell>{employee.yearOfBirth}</Table.Cell>
-                            <Table.Cell>{employee.status == 1 ? "Aktif": "Pasif"}</Table.Cell>
+                            <Table.Cell>{employee.status === 1 ? "Aktif": "Pasif"}</Table.Cell>
                         </Table.Row>
                         ))
                     }
