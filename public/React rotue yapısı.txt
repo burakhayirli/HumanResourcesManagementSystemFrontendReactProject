@@ -1,0 +1,38 @@
+App.js
+
+<Switch>
+  <Route exact path="/" component={HomeDashboard} />
+  <Route exact path="/admin*" component={AdminDashboard} />
+  <Route exact path="/jobseeker_dashboard*" component={JobseekerDashboard} />
+  <Route exact path="/employer_dashboard*" component={EmployerDashboard} />
+  <Route path={Links.USERS} component={Auth} />
+  <Route path="/" component={Dashboard} />
+</Switch>
+
+
+<Route exact path="/admin/jobadvertlist" component={JobAdvertList} />
+<Route exact path="/admin/userlist" component={Employer} />
+<Route exact path="/admin/resumelist" component={ResumeList} />
+<Route exact path="/admin/profile" component ={AdminProfile} />
+<Route exact path="/admin/userlist/employerDetail/:id" component ={AdminEmployerDetails} />
+
+Switch yazmışsın ve en baştaki route'a path olarak '/' vermişsin. Bu durumda switch her durumda ilk route'a girer. İkinci route'a giremez.
+
+Onu yazdıgım sistemleri test etmek için yazdım. Sonradan hepsini admin, jobseeker, employer dashboardlarına yerleştireceğim.
+Hayır Switch kullanıyoruz. Switch ilk gördügü Path doğru ise diğer Routelara bakmaz. Homedashboardda exact var yani url de herhangi bir sayfa yoksa yani anasayfada ise istedigim dashboard çalışıyor
+Basit isterleri önce dashboardda yazıyorum test ediyorum sonra gerkeli dashboarda aktarıyorum. Mesela cv görüntüleme işini ilk burada yapıyorum sonra gerekli yere alıyorum.
+Her routta exact oldugu için switch'e gerek yok. Ve her dashboardda bu şekilde routelar var.
+
+Eğer kullanıcı admin dashboardda ise. Yani url sonunda /admin var ise routeları şu şekildede yazabiliriz. path = "profile" bu şekilde direkt /admin/ + path gibi görüyor. Yani illa Routeların başına /admin/ yazamaya gerek yok.
+İstediğin yerde kullan :smile: bir kısıt yok
+
+Sorun aslında layout kısmı tasarlamakta. 
+Benim burada employer dashboardım bulunmakta. Şuanda Tek bir Route var çünkü diğer hepsi Normal Dashboardda daha aktarmadım :smile: Yavaş yavaş refactor ediyorum kodları.
+Linkten nasıl kullanıldıgına bakabilirsin. Ayrıca exact kullanıyorsun ya pathin sonuna * koyarsan artık * dan önceki yerlere bakıyor. Eğer doğru ise çalıştırıyor. Bunu bilmekte fayda var çünkü bu olmasaydı app.js deki kodlarım çalışmayacaktı. Umarım anlatabilişimdir
+
+
+https://github.com/yasintorun/insan-kaynaklari-yonetim-sistemi/blob/Dev3/frontend/src/layouts/employer/EmployerDashboard.jsx
+
+
+Hocam router'ı tek bir yerde kullanacaksınız. (Örn sizde: App.js). Render etmek istediğiniz component'ı içine atadıktan sonra sizin için yapacaktır.
+Yani şu alttaki kırmızı kutu içine aldığınız Switch Route tek bir yerde olacak

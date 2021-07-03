@@ -1,5 +1,5 @@
 import React, {useState,useEffect} from 'react'
-import { Icon, Label, Menu, Table } from 'semantic-ui-react'
+import { Icon, Label, Menu, Table,Radio } from 'semantic-ui-react'
 import EmployerService from '../services/employerService';
 
 export default function EmployerList() {
@@ -10,7 +10,14 @@ export default function EmployerList() {
         let employerService = new EmployerService();
         employerService.getEmployers().then(result => setEmployers(result.data.data))
     }, [])
+    
+    // const [open, setOpen] = useState(false); 
 
+    // const handleClick = e => {
+    //     e.preventDefault();
+    //     setOpen(!open);
+    //     console.log(!open)
+    //   };
 
     return (
         <div>
@@ -22,6 +29,7 @@ export default function EmployerList() {
                         <Table.HeaderCell>E-Posta</Table.HeaderCell>
                         <Table.HeaderCell>Web Sitesi</Table.HeaderCell>
                         <Table.HeaderCell>Telefon</Table.HeaderCell>
+                        <Table.HeaderCell>Durum</Table.HeaderCell>
                         <Table.HeaderCell>Durum</Table.HeaderCell>
                     </Table.Row>
                 </Table.Header>
@@ -35,6 +43,8 @@ export default function EmployerList() {
                             <Table.Cell>{employer.website}</Table.Cell>
                             <Table.Cell>{employer.phone}</Table.Cell>
                             <Table.Cell>{employer.status === true ? "Aktif": "Pasif"}</Table.Cell>
+                            <Table.Cell><Radio toggle checked={employer.status} /></Table.Cell>
+                            
                         </Table.Row>
                         ))
                     }

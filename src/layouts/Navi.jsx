@@ -17,7 +17,7 @@ export default function Navi() {
 
     function handleSignIn(params) {
         setIsAuthenticated(true)
-        history.push("/admin")
+        //history.push("/admin")
     }
 
     return (
